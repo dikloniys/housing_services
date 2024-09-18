@@ -1,8 +1,24 @@
 import { createGlobalStyle } from "styled-components";
-import { createTheme } from "@mui/material";
+import RobotoRegular from "../fonts/Roboto-Regular.ttf";
+import RobotoMedium from "../fonts/Roboto-Medium.ttf";
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Roboto';
+    src: url(${RobotoRegular}) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url(${RobotoMedium}) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
   *{
+    font-family: 'Roboto';
+    font-weight: 400;
     padding: 0;
     margin: 0;
     box-sizing: border-box;

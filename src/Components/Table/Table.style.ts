@@ -13,7 +13,6 @@ export const TitleTableWrapper = styled.div`
     border-radius: 12px 12px 0 0;
 `;
 export const TitleTable = styled.div`
-    font-family: "Roboto";
     font-size: 13px;
     font-weight: 500;
     line-height: 16px;

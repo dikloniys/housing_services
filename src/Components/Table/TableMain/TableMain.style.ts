@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    color: rgba(31, 41, 57, 1);
 `;
 export const TableItem = styled.div`
     margin-left: 12px;
@@ -8,9 +9,25 @@ export const TableItem = styled.div`
     align-items: center;
     gap: 8px;
 `;
+export const TableNum = styled.div`
+    color: rgba(94, 102, 116, 1);
+`;
 export const ItemType = styled.div`
 `;
 export const ItemTypeText = styled.div`
+    color: rgba(29, 36, 50, 1);
+`;
+export const ItemDate = styled.div`
+`;
+export const ItemAutomatic = styled.div`
+`;
+export const ItemValues = styled.div`
+`;
+export const ItemAddress = styled.div`
+    color: rgba(31, 41, 57, 1);
+`;
+export const ItemDescription = styled.div`
+    color: rgba(94, 102, 116, 1);
 `;
 export const Trashcan = styled.div`
     background-color: rgba(254, 227, 227, 1);

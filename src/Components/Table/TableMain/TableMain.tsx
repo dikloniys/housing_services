@@ -48,7 +48,11 @@ export const TableMain = () => {
             {meters.map((meter, index) => (
                 <styled.Container key={`${meter.id}-Table`}>
                     <styled.TableItemWrapper>
-                        <styled.TableItem>{index + 1}</styled.TableItem>
+                        <styled.TableItem>
+                            <styled.TableNum>
+                                {index + 1}
+                            </styled.TableNum>
+                        </styled.TableItem>
                         <styled.TableItem>
                             <styled.ItemType>
                                 {meter._type[0] === "HotWaterAreaMeter"
@@ -60,24 +64,36 @@ export const TableMain = () => {
                             </styled.ItemTypeText>
                         </styled.TableItem>
                         <styled.TableItem>
-                            {new Date(meter.installation_date).toLocaleDateString("ru-RU", {
-                                year: "numeric",
-                                month: "2-digit",
-                                day: "2-digit"
-                            }).replace(/\./g, "/")}
+                            <styled.ItemDate>
+                                {new Date(meter.installation_date).toLocaleDateString("ru-RU", {
+                                    year: "numeric",
+                                    month: "2-digit",
+                                    day: "2-digit"
+                                }).replace(/\./g, "/")}
+                            </styled.ItemDate>
                         </styled.TableItem>
                         <styled.TableItem>
-                            {meter.is_automatic === false ? "Нет" : "Да"}
+                            <styled.ItemAutomatic>
+                                {meter.is_automatic === false ? "Нет" : "Да"}
+                            </styled.ItemAutomatic>
                         </styled.TableItem>
-                        <styled.TableItem>{meter.initial_values}</styled.TableItem>
                         <styled.TableItem>
-                            {areasData[meter.area.id] &&
+                            <styled.ItemValues>
+                                {meter.initial_values}
+                            </styled.ItemValues>
+                        </styled.TableItem>
+                        <styled.TableItem>
+                            <styled.ItemAddress>
+                                {areasData[meter.area.id] &&
                 `${areasData[meter.area.id]?.house?.address}, ${
                     areasData[meter.area.id]?.str_number_full
                 }`}
+                            </styled.ItemAddress>
                         </styled.TableItem>
                         <styled.TableItem>
-                            {meter.description}
+                            <styled.ItemDescription>
+                                {meter.description}
+                            </styled.ItemDescription>
                             <styled.Trashcan onClick={() => deleteMeter(meter.id)}>
                                 <Trashcan />
                             </styled.Trashcan>
